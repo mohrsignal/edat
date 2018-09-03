@@ -1,4 +1,9 @@
+#' Count NA values
+#'
+#' \code{count_na} counts NA values
+#' 
+#' Adapted from https://sebastiansauer.github.io/sum-isna/
 count_na <- function(df) {
   
-  df %>% map_df(~sum(is.na(.)))
+  df %>% purrr::map_df(~sum(is.na(.)))
 }
